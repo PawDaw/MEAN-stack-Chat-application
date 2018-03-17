@@ -1,0 +1,55 @@
+.form {
+  padding:25px;
+  text-align: center;
+}
+
+img{
+
+  height: 30pt;
+  width: 30pt;
+  margin:12px;
+
+}
+
+
+p{
+
+  color: aliceblue;
+  margin-top:12px;
+  font-size: x-small;
+}
+
+nav li{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+nav a{
+  text-transform: uppercase;
+
+  font-size: large;
+}
+
+select{
+  width: 150px;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.header{
+  color: aliceblue;
+
+  text-transform: uppercase;
+  font-size: large;
+  margin:20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.login {
+
+  margin-right: 20px;
+  position: absolute; right: 0;
+}

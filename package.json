@@ -1,0 +1,36 @@
+{
+  "name": "MEAN-template",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "prepare": "node -e \"console.log(child_process.execSync(os.type()==='Windows_NT'?'npm.cmd install':'npm install', {cwd: 'client'}).toString('utf8'))\"",
+    "build": "node -e \"console.log(child_process.execSync(os.type()==='Windows_NT'?'ng.cmd build --watch false --output-path dist':'ng build --watch false --output-path dist', {cwd: 'client'}).toString('utf8'))\"",
+    "start": "node ./bin/www",
+    "live_build": "node -e \"console.log(child_process.execSync(os.type()==='Windows_NT'?'ng.cmd build --watch true --output-path dist':'ng build --watch true --output-path dist', {cwd: 'client'}).toString('utf8'))\"",
+    "live_start": "node ./node_modules/nodemon/bin/nodemon.js"
+  },
+  "dependencies": {
+    "@angular-devkit/schematics": "0.0.34",
+    "bcrypt": "^1.0.3",
+    "body-parser": "~1.15.2",
+    "bootstrap": "^4.0.0-beta.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^1.3.2",
+    "cookie-parser": "~1.4.3",
+    "csurf": "^1.9.0",
+    "debug": "~2.2.0",
+    "ejs": "~2.5.2",
+    "express": "~4.14.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.3.0",
+    "mongoose": "^4.13.7",
+    "morgan": "~1.7.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "serve-favicon": "~2.3.0",
+    "socket.io": "^1.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.13.3"
+  }
+}

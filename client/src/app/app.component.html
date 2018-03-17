@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <img id="image" src="assets/messages.png">
+    <a class="navbar-brand" href="#">   Chat Rooms :</a>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+
+            <form (ngSubmit)="joinRoom()">
+                <li class="nav-item">
+
+                    <select class="form-control form-control-sm" [(ngModel)]="roomModel.name" name="room" required=" ">
+                        <option *ngFor="let room of chatRooms" value={{room.name}}>{{room.name}}</option>
+                    </select>
+                </li>
+                <li class="nav-item">
+
+                    <button type="submit" class="btn btn-outline-success">Join</button>
+                </li>
+
+            </form>
+
+        </ul>
+
+        <div class="navbar">
+            <p>{{ userName }}</p>
+        </div>
+
+        <div class="navbar">
+            <a href="/" class="btn btn-success pull-right">Logout</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="roomName">
+    <h1>{{roomModel.name}}</h1>
+</div>
+
+<hr>
+
+
+<ul *ngFor="let message of selectedMessages">
+
+    <div class="form-inline">
+         <span class="chat-img pull-right">
+                                <img src="http://placehold.it/50/FA6F57/fff&text=U" alt="User Avatar"
+                                     class="img-circle"/>
+                              </span>
+
+        <div class="right_clearfix">
+            <div class="chat-body clearfix">
+                <div class="header">
+                    <small class="text-muted"><span class="glyphicon glyphicon-time"></span>{{ message.updated_at | date:'medium' }}
+                    </small>
+                    <strong class="pull-left primary-font">{{ message.nickname }}</strong>
+                </div>
+                <div class="message">
+                    <a>{{ message.message }}</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+</ul>
+
+
+<nav class="navbar fixed-bottom navbar-light bg-light">
+
+        <form (ngSubmit)="addMessage()">
+            <div class="row">
+            <div class="col-10">
+                <input class="form-control input-sm" type="text" placeholder="send message ..." class="form-control"
+                       id="message" required
+                       [(ngModel)]="model.message" name="message">
+            </div>
+
+            <div class="col-1">
+                <button class="btn btn-primary" type="submit">SEND</button>
+            </div>
+
+            </div>
+
+        </form>
+
+        <form (ngSubmit)="addRoom()">
+
+            <div class="row ">
+                <div class="col-7">
+
+                    <input class="form-control input-sm" type="text" placeholder="A new room name ..."
+                           class="form-control"
+                           id="addRoom" required [(ngModel)]="newRoom.name" name="addRoom">
+                </div>
+
+                <div class="col-1">
+                    <button class="btn btn-primary my-2 my-sm-0" type="submit">Add Room</button>
+                </div>
+
+            </div>
+
+        </form>
+
+
+</nav>
+
+
+
+
+
+
+
